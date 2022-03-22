@@ -1,0 +1,481 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/prettyCheckboxes.css" rel="stylesheet" type="text/css" />
+    <link href="css/sheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.1.1.js"></script>
+<script type="text/javascript" src="js/camera.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script>
+    jQuery(function () {
+        jQuery('#camera_wrap_1').camera({
+            height: '317px',
+            loader: false,
+            pagination: false,
+            thumbnails: false
+        });
+    });
+  </script>
+  
+  <script>
+      $(function () {
+          function equalHeight(group) {
+              var tallest = 0;
+              group.each(function () {
+                  var thisHeight = $(this).height();
+                  if (thisHeight > tallest) {
+                      tallest = thisHeight;
+                  }
+              });
+              group.height(tallest);
+          }
+          equalHeight($(".insidecon .box"));
+      })
+</script>
+<style type="text/css">
+.fbg {
+	padding:0;
+	background:#413835;
+	width:980px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.fbg_resize {
+	margin:0 auto;
+	width:960px;
+	padding:16px 0;
+	color:#ccc;
+	background:url(../images/fbg_bg.gif) no-repeat center bottom;
+}
+.fbg h2 {
+	color:#ccc;
+	padding-bottom:24px;
+}
+.fbg img.gal {
+	margin:0 8px 8px 0;
+	padding:0;
+}
+.fbg .col {
+	margin:0;
+	float:left;
+}
+.fbg .c1 {
+	padding:0 16px 0 0;
+	width:280px;
+}
+.fbg .c2 {
+	padding:0 36px 0 16px;
+	width:280px;
+}
+.fbg .c3 {
+	padding:0 0 0 16px;
+	width:274px;
+}
+.fbg .fbg_ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.fbg .fbg_ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.fbg .fbg_ul li a {
+	display:block;
+	margin:0;
+	padding:2px 0 2px 12px;
+	color:#ccc;
+	text-decoration:none;
+	background:url(../images/li.gif) no-repeat left center;
+}
+.fbg .fbg_ul li a:hover {
+	color:#df970d;
+	text-decoration:underline;
+}
+.fbg p.contact_info {
+	line-height:1.8em;
+}
+.fbg p.contact_info a {
+	color:#ccc;
+	text-decoration:underline;
+}
+.fbg p.contact_info span {
+	display:block;
+	float:left;
+	width:74px;
+	font-weight:bold;
+	color:#ccc;
+}
+ol {
+	list-style:none;
+}
+ol li {
+	display:block;
+	clear:both;
+}
+ol li label {
+	display:block;
+	margin:0;
+	padding:16px 0 0 0;
+}
+ol li input.text {
+	width:480px;
+	border:1px solid #c0c0c0;
+	margin:0;
+	padding:5px 2px;
+	height:16px;
+	background-color:#fff;
+}
+ol li textarea {
+	width:480px;
+	border:1px solid #c0c0c0;
+	margin:0;
+	padding:2px;
+	background-color:#fff;
+}
+ol li .send {
+	margin:16px 0 0 0;
+}
+.searchform {
+	padding:0;
+	float:left;
+}
+#formsearch {
+	margin:0;
+	padding:12px 0 0;
+	width:auto;
+	height:30px;
+}
+#formsearch span {
+	display:block;
+	margin:0;
+	padding:0;
+	float:left;
+	background:url(../images/search_bg.gif) no-repeat left top;
+}
+#formsearch input.editbox_search {
+	margin:0;
+	padding:8px 6px;
+	float:left;
+	width:170px;
+	font-size:12px;
+	line-height:14px;
+	color:#ccc;
+	background:none;
+	outline:none;
+	border:none;
+}
+#formsearch input.button_search {
+	margin:0;
+	padding:0;
+	border:none;
+	float:left;
+}
+.footer {
+	background:#413835 url(../images/footer_bg.gif) repeat-x left bottom;
+}
+.footer_resize {
+	margin:0 auto;
+	padding:0;
+	width:960px;
+	line-height:1.5em;
+	color:#6b6b6b;
+}
+.footer_resize p {
+	margin:24px 0;
+	padding:0;
+	line-height:normal;
+	white-space:nowrap;
+	text-indent:inherit;
+}
+.footer_resize a {
+	color:#ccc;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	border:none;
+	text-decoration:underline;
+	background-color:transparent;
+}
+.footer_resize a:hover {
+	color:#df970d;
+	background-color:transparent;
+	text-decoration:none;
+}
+.footer_resize .lf {
+	float:left;
+}
+.footer_resize .rf {
+	float:right;
+}
+a {
+	outline:none;
+}
+
+.clr {
+	clear: both;
+}
+
+footer {
+	position:relative;
+	padding:31px 0 20px;
+	background:url(images/tail-bg-footer.gif) repeat-x 0 0;
+	
+}
+.policy {
+	float:right;
+	display:block;
+	font-size:14px;
+	color:#343434;
+	line-height:16px;
+	text-decoration:none;
+	padding:8px 90px 0 0;
+}
+
+.policy a {
+	color:#d53827;
+	text-decoration:none;	
+	
+	
+}
+.policy a:hover {
+	text-decoration:underline;
+}
+
+/*----- social -----*/
+.soc-list {float:left;	
+	display:block;
+	padding-left:73px
+}
+.soc-list li {
+	padding:0 5px 0 0;
+	float:left;
+}
+.soc-list li a {
+	display:block;
+	opacity:1;
+	background:url(images/bg-body.gif);
+}
+.soc-list li a:hover{opacity:0.7}
+.main {
+	margin: 0 auto;
+	position: relative;
+	width: 940px;}
+
+.clear {
+	clear: both;
+}
+ul, li 
+{
+	list-style:none;
+}
+.foot
+{
+    width:100%;
+    background-image:url(images/bg-body.gif);
+    background-repeat:repeat-x;
+    float:left;
+}
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="shell">
+		<!-- Header -->
+		<div id="header">
+			<!-- Search  -->			
+	    <div id="search"></div>
+			<!-- END Search -->						
+			<div class="cl"></div>
+			<!-- Logo -->
+	    <h1 id="logo"><a title="Home" href="#">Mega S</a></h1>
+			<!-- Top Navigation -->
+			<div id="top-navigation">	
+				<ul>
+				  <li></li>
+					<li></li>
+					<li></li>				
+				</ul>		
+		  </div>				
+			<!-- END Top Navigation -->	
+			<div class="cl"></div>		
+		</div>
+		<!-- END Header -->
+		<!-- Navigation -->
+		<div id="topbar">
+						<div class="menu">
+			<ul class="sf-menu">
+				<li> <a  class="on" href="index.html">HOME</a></li>
+				<li> <a href="about.html">ABOUT</a>
+					
+				</li>
+				<li> <a href="portfolio.html">Customers</a>
+											
+					
+			  </li>
+				<li> <a href="blog.html">support</a>
+								  </li>
+				<li> <a href="contact.html">CONTACT</a> </li>
+			</ul>
+		</div>
+		<!-- End of Menu -->
+	</div>
+	  <div class="clear"></div>
+		<!-- slider begins-->
+<div class="slide">
+<div id="slider">
+			<div class="container_12">
+			  <div class="grid_12">
+				<div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+		      <div data-src="images/slide1.jpg">
+		          <div class="camera_caption fadeIn">
+		              <h2>Our Recent Projects</h2>
+		              	
+		              	<p><a href="#" class="button">More Info</a></p>
+		          </div>
+		      </div>
+		      <div data-src="images/slide2.jpg">
+		          <div class="camera_caption fadeIn">
+		              <h2>biz.Power</h2>
+		              	         	<p><a href="#" class="button">More Info</a></p>
+		          </div>
+		      </div>
+		      <div data-src="images/slide3.jpg">
+		          <div class="camera_caption fadeIn">
+		              <h2>Development</h2>
+
+		              	<p><a href="#" class="button">More Info</a></p>
+		          </div>
+		      </div>
+		     </div>
+		    </div>
+	  	</div>
+	</div>
+
+
+</div>
+                        <!--slider ends-->
+
+    
+	  <!-- END Navigation -->
+        
+  <div class="clear"></div>
+		<!-- Main  -->
+        
+<div id="main">
+			<!-- Slider -->
+            
+            
+<!-- END Slider -->
+			<!-- Content -->
+	  <div id="content">				
+				<div class="post">
+					<h2>Welcome to Ellac C</h2>
+					<p><strong>Proin hendrerit vehicula cursus.</strong> In tempor metus eget magna varius sagittis et ac nisi. Vestibulum massa nisl, tincidunt at sodales a, adipiscing iaculis nunc. Sed rutrum justo vitae sem aliquet bibendum. <strong>Quisque vestibulum, velit ut cursus blandit, orci quam adipiscing arcu, a ultricies felis urna sed risus. Etiam in dolor eu massa sodales faucibus non et purus.</strong> Nam facilisis aliquet adipiscing. Maecenas ligula mi, porttitor faucibus imperdiet eu, porta nec urna. In vel ligula quam. </p>
+					<p>Proin in nunc nibh, in suscipit enim. Nunc fermentum metus ut diam faucibus rhoncus. Duis augue sapien, pharetra sit amet mollis at, luctus ut eros.</p>
+				</div>
+			</div>
+			<!-- ЕND Content  -->
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="box">
+					<h2>Quick Links</h2>
+					<ul>
+						<li><a title="Aenean" href="#">Drivers</a></li>
+						<li><a title="Suspendisse" href="#">Chefs</a></li>
+						<li><a title="Pellentesque" href="#">Nanies</a></li>
+						<li><a title="Mauris" href="#">Sales Girls</a></li>
+						<li><a title="semper nec faucibus" href="#">Hottel Attendant</a></li>
+						<li><a title="vel ultrices" href="#">vel ultrices</a></li>
+					</ul>
+				</div>
+			</div>	
+			<!-- END Sidebar -->
+			<div class="cl"></div>
+			<!-- Latest Products --><!-- END Latest Products -->
+			<!-- Feartured Products --><!-- END Featured Products -->			
+			<!-- Footer  -->
+		</div>
+		<!-- END Main -->
+	</div>	
+        <!-- start Footer-->
+    <div class="fbg">
+<div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image</span> Gallery</h2>
+        <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
+      <div class="col c2">
+        <h2><span>Services</span> Overview</h2>
+        <p>Curabitur sed urna id nunc pulvinar semper. Nunc sit amet tortor sit amet lacus sagittis posuere cursus vitae nunc.Etiam venenatis, turpis at eleifend porta, nisl nulla bibendum justo.</p>
+        <ul class="fbg_ul">
+          <li><a href="#">Lorem ipsum dolor labore et dolore.</a></li>
+          <li><a href="#">Excepteur officia deserunt.</a></li>
+          <li><a href="#">Integer tellus ipsum tempor sed.</a></li>
+        </ul>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span> Us</h2>
+        <p>Nullam quam lorem, tristique non vestibulum nec, consectetur in risus. Aliquam a quam vel leo gravida gravida eu porttitor dui.</p>
+        <p class="contact_info"> <span>Address:</span> 1458 TemplateAccess, USA<br />
+          <span>Telephone:</span> +123-1234-5678<br />
+          <span>FAX:</span> +458-4578<br />
+          <span>Others:</span> +301 - 0125 - 01258<br />
+          <span>E-mail:</span> <a href="#">mail@yoursitename.com</a> </p>
+      </div>
+      <div class="clr"></div>
+    </div>
+    </div>
+    <footer>
+  <div class="main">
+    <ul class="soc-list">
+      <li><a href="#"><img alt="" src="images/icon-1.png"></a></li>
+      <li><a href="#"><img alt="" src="images/icon-2.png"></a></li>
+      <li><a href="#"><img alt="" src="images/icon-3.png"></a></li>
+      <li><a href="#"><img alt="" src="images/icon-4.png"></a></li>
+    </ul>
+    <div class="policy">Copyright &copy; 2014 . Ellac-c LTD</div>
+    <div class="clear"></div>
+  </div>
+</footer>
+    <!-- end footer-->
+    <script type="text/javascript"> Cufon.now(); </script>
+	<script type="text/javascript">
+	    $(function () {
+	        $('.slider')._TMS({
+	            prevBu: '.prev',
+	            nextBu: '.next',
+	            playBu: '.play',
+	            duration: 800,
+	            easing: 'easeOutQuad',
+	            preset: 'simpleFade',
+	            pagination: false,
+	            slideshow: 3000,
+	            numStatus: false,
+	            pauseOnHover: true,
+	            banners: true,
+	            waitBannerAnimation: false,
+	            bannerShow: function (banner) {
+	                banner
+						.hide()
+						.fadeIn(500)
+	            },
+	            bannerHide: function (banner) {
+	                banner
+						.show()
+						.fadeOut(500)
+	            }
+	        });
+	    })
+	</script>
+    </form>
+</body>
+</html>
